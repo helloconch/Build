@@ -1,0 +1,9 @@
+include ':app'
+rootProject.name='Building'
+include ':common'
+include ':order'
+include ':personal'
+include ':gradle-test'
+project(':gradle-test').projectDir=new File('','/Users/cheyanxu/Desktop/gradle-test')
+println(">>>>>setting.gradle")
+include ':mvp'
