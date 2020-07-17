@@ -1,4 +1,4 @@
-println("###order模块build执行")
+println("###order build ###")
 if (rootProject.isRelease) {
     apply plugin: 'com.android.library'
 } else {

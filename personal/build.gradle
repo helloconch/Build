@@ -1,3 +1,4 @@
+println("### personal.build ###")
 if (rootProject.isRelease) {
     apply plugin: 'com.android.library'
 } else {
@@ -54,4 +55,3 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
-println(">>>>>personal.build")

@@ -1,3 +1,4 @@
+println("###app build ###")
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -82,4 +83,4 @@ dependencies {
     }
 }
 
-println(">>>>>app.build")
+

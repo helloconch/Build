@@ -4,7 +4,5 @@ rootProject.name='Building'
 include ':common'
 include ':order'
 include ':personal'
-include ':gradle-test'
-println(">>>>>setting.gradle")
 include ':mvp'
 include ':jetpack'

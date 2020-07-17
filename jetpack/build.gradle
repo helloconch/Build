@@ -1,4 +1,4 @@
-println("###jetpack模块build执行")
+println("###jetpack build###")
 if (rootProject.isRelease) {
     apply plugin: 'com.android.library'
 } else {
@@ -56,4 +56,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 }
