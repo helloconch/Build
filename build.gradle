@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        println(">>>>>buildscript.repositories")
+        println("###buildscript.repositories")
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
@@ -19,7 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        println(">>>>>allprojects.repositories")
+        println("###allprojects.repositories")
     }
 }
 
@@ -28,7 +28,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    isRelease = true
+    isRelease = false
     compileSdkVersion = 28
     minSdkVersion = 21
     targetSdkVersion = 28
