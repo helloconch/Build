@@ -13,5 +13,12 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+        var datas: ArrayList<String>? = null
+        System.out.println(datas?.size ?: "print 0")
+
+        System.out.println(datas?.size)
+        // datas必须不为null
+        //System.out.println(datas!!.size)
+
     }
 }

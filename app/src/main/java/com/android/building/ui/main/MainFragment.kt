@@ -2,6 +2,8 @@ package com.android.building.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,6 +49,21 @@ class MainFragment : Fragment() {
             context?.startActivity(intent)
 
         })
+
+
+        val typedValue = TypedValue()
+        activity!!.resources.getValue(R.drawable.test, typedValue, true)
+        val density = typedValue.density
+        val path = typedValue.string.toString()
+        val drawable = activity!!.resources.getDrawable(R.drawable.test)
+        val intrinsicWidth = drawable.intrinsicWidth
+        val intrinsicHeight = drawable.intrinsicHeight
+        Log.i(
+            "AABBCCDD", String.format(
+                "density:%d path:%s width:%d  height:%d ",
+                density, path, intrinsicWidth, intrinsicHeight
+            )
+        )
 
 
     }
