@@ -2,6 +2,7 @@ package com.android.building.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -50,12 +51,22 @@ class MainFragment : Fragment() {
 
         })
 
+        val displayMetrics: DisplayMetrics = activity!!.resources.displayMetrics
+        Log.i(
+            "AABBCCDD", String.format(
+                "width:%d height:%d density:%s densityDpi:%s",
+                displayMetrics.widthPixels,
+                displayMetrics.heightPixels,
+                displayMetrics.density.toString(),
+                displayMetrics.densityDpi.toString()
+            )
+        )
 
         val typedValue = TypedValue()
-        activity!!.resources.getValue(R.drawable.test, typedValue, true)
+        activity!!.resources.getValue(R.drawable.abc, typedValue, true)
         val density = typedValue.density
         val path = typedValue.string.toString()
-        val drawable = activity!!.resources.getDrawable(R.drawable.test)
+        val drawable = activity!!.resources.getDrawable(R.drawable.abc)
         val intrinsicWidth = drawable.intrinsicWidth
         val intrinsicHeight = drawable.intrinsicHeight
         Log.i(
@@ -64,7 +75,6 @@ class MainFragment : Fragment() {
                 density, path, intrinsicWidth, intrinsicHeight
             )
         )
-
 
     }
 

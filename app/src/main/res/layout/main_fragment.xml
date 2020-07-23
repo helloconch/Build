@@ -30,5 +30,10 @@
             android:layout_height="wrap_content"
             android:text="order" />
 
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </layout>
