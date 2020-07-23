@@ -66,15 +66,20 @@ class MainFragment : Fragment() {
         activity!!.resources.getValue(R.drawable.abc, typedValue, true)
         val density = typedValue.density
         val path = typedValue.string.toString()
-        val drawable = activity!!.resources.getDrawable(R.drawable.abc)
+
+        val drawable = activity!!.resources.getDrawable(R.drawable.test)
         val intrinsicWidth = drawable.intrinsicWidth
         val intrinsicHeight = drawable.intrinsicHeight
+
+
         Log.i(
             "AABBCCDD", String.format(
                 "density:%d path:%s width:%d  height:%d ",
                 density, path, intrinsicWidth, intrinsicHeight
             )
         )
+
+        binding.pic.setImageResource(R.drawable.test)
 
     }
 
