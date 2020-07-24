@@ -13,7 +13,7 @@ class BasePresenter : IPresenter {
     }
 
     override fun onDestroy(lifecycleOwner: LifecycleOwner) {
-        Log.i(TAG, "onCreate>>>" + lifecycleOwner.javaClass)
+        Log.i(TAG, "onDestory>>>" + lifecycleOwner.javaClass)
     }
 
     override fun onLifecycleChanged(

@@ -28,13 +28,13 @@ task clean(type: Delete) {
 }
 
 ext {
-    isRelease = true
+    isRelease = false
     compileSdkVersion = 28
     minSdkVersion = 14
     targetSdkVersion = 28
     versionCode = 1
     versionName = "1.0"
-    androidXVersion = "1.0.2"
+    androidXVersion = "1.1.0"
     navigationVersion = "2.0.0"
     retrofitVersion = "2.7.2"
 
