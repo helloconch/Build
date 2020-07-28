@@ -6,6 +6,7 @@ if (rootProject.isRelease) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -15,6 +16,7 @@ android {
         if (!rootProject.isRelease) {
             applicationId "com.android.jetpack"
         }
+        multiDexEnabled true
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode rootProject.versionCode
@@ -61,4 +63,23 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+
+    def paging_version = '1.0.1'
+    implementation "android.arch.paging:common:$paging_version"
+    implementation "android.arch.paging:runtime:$paging_version"
+    implementation "android.arch.paging:rxjava2:$paging_version"
+
+
+    def room_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
+    implementation "android.arch.persistence.room:guava:$room_version"
+    testImplementation "android.arch.persistence.room:testing:$room_version"
+
+    def work_version = "1.0.1"
+    implementation "android.arch.work:work-runtime:$work_version"
+    implementation "android.arch.work:work-testing:$work_version"
+
+
 }
