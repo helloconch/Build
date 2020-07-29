@@ -42,14 +42,28 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //Navigation
-    def navigationVersion='2.3.0'
+    def navigationVersion = '2.3.0'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    //lifecycle
+    def lifecycleVersion='2.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
 
     //Rx
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.x.x'
 
+    //Retrofit
+    def retrofitVersion = '2.2.0'
+    def okhttploggingVersion = '3.4.1'
+    def okhttpVersion = '3.4.1'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttploggingVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
 
 
 }
