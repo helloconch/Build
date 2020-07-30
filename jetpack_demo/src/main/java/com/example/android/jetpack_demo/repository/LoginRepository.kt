@@ -18,7 +18,7 @@ class LoginRepository {
                 loginLiveData.value = it
             }, Consumer {
                 loginLiveData.value =
-                    LoginBean(LoginBean.DataBean(), errorCode = 500, errorMsg = it.message)
+                    LoginBean(LoginBean.Data(), errorCode = 500, errorMsg = it.message)
             })
 
     }
@@ -30,7 +30,7 @@ class LoginRepository {
             .subscribe(Consumer {
                 registerLiveData.value = it
             }, Consumer {
-                registerLiveData.value = LoginBean(LoginBean.DataBean(), 500, it.message)
+                registerLiveData.value = LoginBean(LoginBean.Data(), 500, it.message)
             })
 
     }

@@ -33,16 +33,16 @@ class ExtApplication : Application() {
 
     var loginImpl: ILogin = object : ILogin {
         override fun isLogin(): Boolean {
-            LogUtils.print(Constants.loginTag, "login>>>")
+            LogUtils.print(Constants.TAG_LOGIN, "login>>>")
             return false
         }
 
         override fun login(userDefine: Int) {
-            LogUtils.print(Constants.loginTag, "login>>>userDefine:$userDefine")
+            LogUtils.print(Constants.TAG_LOGIN, "login>>>userDefine:$userDefine")
         }
 
         override fun exitLogin() {
-            LogUtils.print(Constants.loginTag, "exitLogin>>>")
+            LogUtils.print(Constants.TAG_LOGIN, "exitLogin>>>")
         }
 
     }

@@ -27,8 +27,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="hello1234567"
             android:hint="username" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,9 +44,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:text="cyx1234567"
+            android:hint="password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

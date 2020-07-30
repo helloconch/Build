@@ -2,6 +2,7 @@ package com.example.android.jetpack_demo.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.jetpack_demo.libs.utils.Constants
 import com.example.android.jetpack_demo.libs.utils.LogUtils
@@ -19,7 +20,16 @@ class SplashActivity : AppCompatActivity() {
         Observable.timer(1, TimeUnit.SECONDS)
             .flatMap {
                 LogUtils.print("splashActivity", "name:${Thread.currentThread().name}")
-                val isLogin by PreferenceUtils<Boolean>(Constants.login_key, false)
+
+
+                var username by PreferenceUtils(Constants.KEY_USERNAME, "abc");
+
+                var userid by PreferenceUtils(Constants.KEY_USER_ID, -1)
+
+                Log.i("AABBCCDD", "username:$username  userid:$userid")
+
+
+                val isLogin by PreferenceUtils<Boolean>(Constants.KEY_IS_LOGIN, false)
                 if (isLogin) {
                     return@flatMap Observable.just(0L)
                 } else {

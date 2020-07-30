@@ -6,7 +6,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-const val BASE_URL = "http://www.wanandroid.com/"
+const val BASE_URL = "https://www.wanandroid.com"
 
 interface Api {
     @FormUrlEncoded
