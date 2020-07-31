@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/scroolTV"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#222222"
+            android:gravity="center"
+            android:text="该区域可折叠"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            app:layout_scrollFlags="scroll" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#DD012D"
+            android:gravity="center"
+            android:text="该区域为上滑至头部固定区域"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/rv_demo1_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/contentTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cccc"
+            android:text="这是一个滚动布局"
+            android:textSize="200sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <!--    行为控制器引用 app:layout_behavior=".libs.behavior.DemoBehavior"-->
+    <TextView
+        android:id="@+id/bottomTV"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_gravity="bottom"
+        android:background="#ff00ff"
+        app:layout_behavior=".libs.behavior.DemoBehavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
