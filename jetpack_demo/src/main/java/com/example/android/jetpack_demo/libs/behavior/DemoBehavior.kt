@@ -17,10 +17,6 @@ class DemoBehavior : CoordinatorLayout.Behavior<View> {
         child: View,
         dependency: View
     ): Boolean {
-//        LogUtils.print(
-//            tag = DemoBehavior::class.java.simpleName,
-//            message = "child:${child.toString()}  dependency:${dependency.toString()}"
-//        )
         //这里判断dependency所属的View是哪一个,返回true，onDependentViewChanged才执行,否则不执行
         return dependency is AppBarLayout
     }
