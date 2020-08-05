@@ -26,6 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 }
 
@@ -40,4 +44,15 @@ dependencies {
     implementation 'info.android15.nucleus5:nucleus:7.0.0'
     implementation 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
     implementation 'info.android15.nucleus5:nucleus-support-v7:7.0.0'
+
+    def retrofitVersion = '2.2.0'
+    def okhttploggingVersion = '3.4.1'
+    def okhttpVersion = '3.4.1'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttploggingVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
 }
