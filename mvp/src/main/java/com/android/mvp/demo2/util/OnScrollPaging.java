@@ -30,8 +30,8 @@ public class OnScrollPaging extends RecyclerView.OnScrollListener {
         int loadedItemCount = adapter.getItemCount();
         int firstVisibleItem = layoutManager.findFirstCompletelyVisibleItemPosition();
 
-        Log.i(Constants.TAG, String.format("loadedItemCount:%d  firstVisibleItem:%d visibleItemCount:%d",
-                loadedItemCount, firstVisibleItem, visibleItemCount));
+//        Log.i(Constants.TAG, String.format("loadedItemCount:%d  firstVisibleItem:%d visibleItemCount:%d",
+//                loadedItemCount, firstVisibleItem, visibleItemCount));
 
         if (loadedItemCount - firstVisibleItem - visibleItemCount < 3) {
             requestNext.call();

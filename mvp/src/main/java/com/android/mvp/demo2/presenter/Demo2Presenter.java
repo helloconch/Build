@@ -12,6 +12,7 @@ import com.android.mvp.demo2.entity.PageBundle;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.BiConsumer;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.PublishSubject;
 import nucleus5.presenter.Factory;
@@ -45,6 +46,12 @@ public class Demo2Presenter extends RxPresenter<Demo2Activity> {
                 (activity, responsePageBundle) -> activity.onItems(responsePageBundle),
                 Demo2Activity::onNetworkError);
 
+        pageRequests.startWith(0).subscribe(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+                Log.i(Constants.TAG, String.format("Demo2Presenter integer:%d", integer));
+            }
+        });
     }
 
     public void request() {
@@ -52,6 +59,7 @@ public class Demo2Presenter extends RxPresenter<Demo2Activity> {
     }
 
     public void requestNext(int page) {
+        Log.i(Constants.TAG, String.format("Demo2Presenter requestNext:%d", page));
         pageRequests.onNext(page);
     }
 }
