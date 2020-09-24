@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         contentTV = findViewById(R.id.contentTV);
         findViewById(R.id.btn1).setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, Demo1Activity.class))
+            startActivity(new Intent(MainActivity.this, Demo1Activity.class));
         });
 
 
@@ -53,14 +53,5 @@ public class MainActivity extends AppCompatActivity {
         return Observable.create(s -> {
             s.onNext("hello remote");
         });
-    }
-
-    private void test() {
-        btn1.buildDrawingCache();
-        btn1.setDrawingCacheEnabled(true);
-        Bitmap bitmap = Bitmap.createBitmap(btn1.getDrawingCache());
-        btn1.setDrawingCacheEnabled(false);
-        btn1.destroyDrawingCache();
-        iv.setImageBitmap(bitmap);
     }
 }
