@@ -1,7 +1,10 @@
 package com.android.mvp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
     TextView contentTV;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         contentTV = findViewById(R.id.contentTV);
-
-        findViewById(R.id.btn1).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Demo1Activity.class)));
+        findViewById(R.id.btn1).setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, Demo1Activity.class))
+        });
 
 
         findViewById(R.id.btn2).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Demo2Activity.class)));
@@ -48,5 +53,14 @@ public class MainActivity extends AppCompatActivity {
         return Observable.create(s -> {
             s.onNext("hello remote");
         });
+    }
+
+    private void test() {
+        btn1.buildDrawingCache();
+        btn1.setDrawingCacheEnabled(true);
+        Bitmap bitmap = Bitmap.createBitmap(btn1.getDrawingCache());
+        btn1.setDrawingCacheEnabled(false);
+        btn1.destroyDrawingCache();
+        iv.setImageBitmap(bitmap);
     }
 }
