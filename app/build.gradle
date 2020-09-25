@@ -73,6 +73,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
 
 
+
+
     if (rootProject.isRelease) {
         //集成化模式，做项目发布
         implementation project(":order")

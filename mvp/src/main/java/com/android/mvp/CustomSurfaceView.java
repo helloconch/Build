@@ -6,15 +6,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.TextureView;
 
 import androidx.annotation.RequiresApi;
 
 public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     private final String TAG = CustomSurfaceView.class.getSimpleName();
-    private SurfaceHolder holder;
+    private SurfaceHolder surfaceHolder;
     /**
      * 用于绘图的Canvas
      */
@@ -46,8 +46,8 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
     }
 
     private void init() {
-        holder = getHolder();
-        holder.addCallback(this);
+        surfaceHolder = getHolder();
+        surfaceHolder.addCallback(this);
         setFocusable(true);
         setFocusableInTouchMode(true);
         setKeepScreenOn(true);
@@ -55,11 +55,13 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
+        Log.i(TAG, "surfaceCreated>>>>");
         mIsDrawing = true;
         new Thread(() -> {
             while (mIsDrawing) {
                 try {
-                    mCanvas = holder.lockCanvas();
+                    mCanvas = surfaceHolder.lockCanvas();
+                    Log.i(TAG, String.format("name:%s mcanvas:%b", Thread.currentThread().getName(), (mCanvas == null)));
                     mCanvas.drawColor(Color.WHITE);
                     Paint paint = new Paint();
                     paint.setColor(Color.RED);
@@ -78,11 +80,12 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
+        Log.i(TAG, "surfaceChanged>>>>");
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
+        Log.i(TAG, "surfaceDestroyed>>>>");
         mIsDrawing = false;
     }
 }
