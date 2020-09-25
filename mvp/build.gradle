@@ -58,4 +58,7 @@ dependencies {
     def supportVersion = '28.0.0'
     implementation "com.android.support:recyclerview-v7:$supportVersion"
 
+    //字节码插桩引入
+    testImplementation 'org.ow2.asm:asm:9.0'
+    testImplementation 'org.ow2.asm:asm-commons:9.0'
 }

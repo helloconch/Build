@@ -8,6 +8,7 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.TextureView;
 
 import androidx.annotation.RequiresApi;
 
@@ -59,7 +60,7 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
             while (mIsDrawing) {
                 try {
                     mCanvas = holder.lockCanvas();
-                    // draw sth绘制过程
+                    mCanvas.drawColor(Color.WHITE);
                     Paint paint = new Paint();
                     paint.setColor(Color.RED);
                     mCanvas.drawText("Hello", 30, 30, paint);
