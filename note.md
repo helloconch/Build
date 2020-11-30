@@ -23,3 +23,5 @@
 - LiveData 本质是 观察者模式 的体现
 - 优秀的设计和轻量级
 
+### [gradle](https://juejin.cn/post/6888977881679495175)
+
