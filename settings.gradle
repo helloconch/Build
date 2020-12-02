@@ -1,4 +1,3 @@
-include ':mygradle'
 println("###setting.gradle run###")
 include ':app'
 rootProject.name='Building'
