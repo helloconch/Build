@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--外部存储空间根目录，等同于Environment.getExternalStorageDirectory()-->
+    <external-path
+        name="/storage/emulated/0/"
+        path="." />
+
+    <!-- 内部存储空间私有目录files目录等同于Context.getFilesDir()-->
+    <files-path
+        name="/data/user_de/0"
+        path="." />
+
+    <files-path
+        name="/data/user/0"
+        path="." />
+
+    <files-path
+        name="files_path"
+        path="." />
+
+    <!--外部存储空间应用私有目录下files/目录，等同于Context.getExternalFilesDir(null)-->
+    <external-files-path
+        name="external_files_path"
+        path="." />
+
+<!--    <external-files-path-->
+<!--        name="/storage/emulated/0/"-->
+<!--        path="." />-->
+
+</paths>

@@ -1,0 +1,26 @@
+### 河北基地盒子9.0
+name 不能随便写
+targetSdkVersion=28 FileProvider 外部、内部files解析包出现问题,可访问Download
+targetSdkVersion=22 无FileProvider外部/内部files/Download可访问
+
+### 模拟器9.0
+name可随意写
+targetSdkVersion=28  FileProvider 外部、内部files可访问,访问Download解析包出现问题
+targetSdkVersion=22  无FileProvider外部/内部files/Download可访问
+
+
+### 广东盒子9.0
+系统安装报错
+
+### 云南盒子9.0-黑
+name 随意
+targetSdkVersion=28  FileProvider外部/内部files/Download可访问
+targetSdkVersion=22  无FileProvider外部/内部files/Download可访问
+
+ 1. <tag>中path下必须有对应的apk
+ 2. FileProvider.getUriForFile(context, context.getPackageName() + ".FileProvider", file)
+ a:解析包错误
+ FileProvider中file无真实apk
+
+ b:java.lang.IllegalArgumentException: Failed to find configured root that contains /storage/emulated/0/app-upgrade.apk
+ <tag>中path与FileProvider中file不属于包含关系
